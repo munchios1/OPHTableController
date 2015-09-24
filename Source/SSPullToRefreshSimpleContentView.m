@@ -49,6 +49,7 @@
 	switch (state) {
 		case SSPullToRefreshViewStateReady: {
 			self.statusLabel.text = NSLocalizedString(@"Release to refresh", nil);
+            self.statusLabel.textColor = [UIColor colorWithRed:255.0f/255.0f green:130.0f/255.0f blue:1.0/255.0f alpha:1];
 			[self.activityIndicatorView startAnimating];
 			self.activityIndicatorView.alpha = 0.0f;
 			break;
@@ -56,16 +57,18 @@
 
 		case SSPullToRefreshViewStateNormal: {
 			self.statusLabel.text = NSLocalizedString(@"Pull down to refresh", nil);
+            self.statusLabel.textColor = [UIColor colorWithRed:255.0f/255.0f green:130.0f/255.0f blue:1.0/255.0f alpha:1];
 			self.statusLabel.alpha = 1.0f;
 			[self.activityIndicatorView stopAnimating];
 			self.activityIndicatorView.alpha = 0.0f;
 			break;
 		}
-
+            
 		case SSPullToRefreshViewStateLoading: {
 			self.statusLabel.alpha = 0.0f;
 			[self.activityIndicatorView startAnimating];
 			self.activityIndicatorView.alpha = 1.0f;
+            self.activityIndicatorView.color = [UIColor colorWithRed:255.0f/255.0f green:130.0f/255.0f blue:1.0/255.0f alpha:1];
 			break;
 		}
 
